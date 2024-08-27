@@ -1,6 +1,6 @@
 #checkov:skip=CKV_DOCKER_2: HEALTHCHECK not required - Health checks are implemented downstream of this image
 
-FROM public.ecr.aws/ubuntu/ubuntu@sha256:65ccda647ad998c36c5b0365e308ec0b1bc770ace445d5e954d55ac8c19a9c27
+FROM public.ecr.aws/ubuntu/ubuntu@sha256:1dcbe7904c076a9be067b013d8d6aa33fad8d183bd24f27aa40b488b0ea7780e
 
 LABEL org.opencontainers.image.vendor="Ministry of Justice" \
       org.opencontainers.image.authors="Analytical Platform (analytical-platform@digital.justice.gov.uk)" \
@@ -15,6 +15,8 @@ ENV CONTAINER_USER="analyticalplatform" \
     ANALYTICAL_PLATFORM_DIRECTORY="/opt/analytical-platform" \
     DEBIAN_FRONTEND="noninteractive" \
     PIP_BREAK_SYSTEM_PACKAGES="1" \
+    MINICONDA_VERSION="24.7.1-0" \
+    MINICONDA_SHA256="33442cd3813df33dcbb4a932b938ee95398be98344dff4c30f7e757cd2110e4f" \
     CUDA_VERSION="12.5.1" \
     NVIDIA_DISABLE_REQUIRE="true" \
     NVIDIA_CUDA_CUDART_VERSION="12.5.82-1" \
@@ -22,7 +24,7 @@ ENV CONTAINER_USER="analyticalplatform" \
     NVIDIA_VISIBLE_DEVICES="all" \
     NVIDIA_DRIVER_CAPABILITIES="compute,utility" \
     LD_LIBRARY_PATH="/usr/local/nvidia/lib:/usr/local/nvidia/lib64" \
-    PATH="/usr/local/nvidia/bin:/usr/local/cuda/bin:/home/analyticalplatform/.local/bin:${PATH}"
+    PATH="/usr/local/nvidia/bin:/usr/local/cuda/bin:/opt/conda/bin:/home/analyticalplatform/.local/bin:${PATH}"
 
 SHELL ["/bin/bash", "-e", "-u", "-o", "pipefail", "-c"]
 
@@ -61,6 +63,22 @@ apt-get clean --yes
 rm --force --recursive /var/lib/apt/lists/*
 
 install --directory --owner "${CONTAINER_USER}" --group "${CONTAINER_GROUP}" --mode 0755 "${ANALYTICAL_PLATFORM_DIRECTORY}"
+EOF
+
+# Miniconda
+# Installs Miniconda (https://docs.anaconda.com/miniconda/)
+RUN <<EOF
+curl --location --fail-with-body \
+  "https://repo.anaconda.com/miniconda/Miniconda3-py312_${MINICONDA_VERSION}-Linux-x86_64.sh" \
+  --output "miniconda.sh"
+
+echo "${MINICONDA_SHA256} miniconda.sh" | sha256sum --check
+
+bash miniconda.sh -b -p /opt/conda
+
+chown --recursive "${CONTAINER_USER}":"${CONTAINER_GROUP}" /opt/conda
+
+rm --force miniconda.sh
 EOF
 
 # NVIDIA CUDA
