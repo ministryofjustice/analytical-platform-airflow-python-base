@@ -49,7 +49,7 @@ apt-get update --yes
 apt-get install --yes \
   "apt-transport-https=2.7.14build2" \
   "ca-certificates=20240203" \
-  "curl=8.5.0-2ubuntu10.2" \
+  "curl=8.5.0-2ubuntu10.3" \
   "git=1:2.43.0-1ubuntu7.1" \
   "jq=1.7.1-3build1" \
   "python3.12=3.12.3-1ubuntu0.1" \
