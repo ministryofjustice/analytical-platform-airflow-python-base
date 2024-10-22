@@ -11,8 +11,7 @@
       "extensions": [
         "EditorConfig.EditorConfig",
         "GitHub.vscode-github-actions",
-        "GitHub.vscode-pull-request-github",
-        "ms-vsliveshare.vsliveshare"
+        "GitHub.vscode-pull-request-github"
       ]
     }
   }
