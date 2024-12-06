@@ -15,6 +15,7 @@ ENV CONTAINER_USER="analyticalplatform" \
     ANALYTICAL_PLATFORM_DIRECTORY="/opt/analytical-platform" \
     DEBIAN_FRONTEND="noninteractive" \
     PIP_BREAK_SYSTEM_PACKAGES="1" \
+    AWS_CLI_VERSION="2.22.12" \
     CUDA_VERSION="12.6.1" \
     NVIDIA_DISABLE_REQUIRE="true" \
     NVIDIA_CUDA_CUDART_VERSION="12.6.77-1" \
@@ -61,6 +62,28 @@ apt-get clean --yes
 rm --force --recursive /var/lib/apt/lists/*
 
 install --directory --owner "${CONTAINER_USER}" --group "${CONTAINER_GROUP}" --mode 0755 "${ANALYTICAL_PLATFORM_DIRECTORY}"
+EOF
+
+# AWS CLI
+COPY --chown=nobody:nogroup --chmod=0644 src/opt/aws-cli/aws-cli@amazon.com.asc /opt/aws-cli/aws-cli@amazon.com.asc
+RUN <<EOF
+gpg --import /opt/aws-cli/aws-cli@amazon.com.asc
+
+curl --location --fail-with-body \
+  "https://awscli.amazonaws.com/awscli-exe-linux-x86_64-${AWS_CLI_VERSION}.zip.sig" \
+  --output "awscliv2.sig"
+
+curl --location --fail-with-body \
+  "https://awscli.amazonaws.com/awscli-exe-linux-x86_64-${AWS_CLI_VERSION}.zip" \
+  --output "awscliv2.zip"
+
+gpg --verify awscliv2.sig awscliv2.zip
+
+unzip awscliv2.zip
+
+./aws/install
+
+rm --force --recursive awscliv2.sig awscliv2.zip aws
 EOF
 
 # NVIDIA CUDA

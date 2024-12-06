@@ -39,6 +39,11 @@ commandTests:
     args: ["--version"]
     expectedOutput: ["pip 24.0"]
 
+  - name: "aws"
+    command: "aws"
+    args: ["--version"]
+    expectedOutput: ["aws-cli/2.22.12"]
+
 fileExistenceTests:
   - name: "/opt/analytical-platform"
     path: "/opt/analytical-platform"
