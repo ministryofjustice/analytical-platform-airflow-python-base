@@ -12,6 +12,8 @@ This repository contains the code for building the Python base image used by Ana
 
 This image is built on Ubuntu 24.04 LTS and includes the following software:
 
+- AWS CLI
+
 - Python 3.12
 
 - NVIDIA CUDA drivers
@@ -59,6 +61,10 @@ apt-get update
 
 apt-cache policy ${PACKAGE} # for example curl, git or gpg
 ```
+
+### AWS CLI
+
+Releases for AWS CLI are provided on [GitHub](https://raw.githubusercontent.com/aws/aws-cli/v2/CHANGELOG.rst)
 
 ### NVIDIA CUDA
 
