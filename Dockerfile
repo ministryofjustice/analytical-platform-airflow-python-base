@@ -12,18 +12,18 @@ ENV CONTAINER_USER="analyticalplatform" \
     CONTAINER_UID="1000" \
     CONTAINER_GROUP="analyticalplatform" \
     CONTAINER_GID="1000" \
-    ANALYTICAL_PLATFORM_DIRECTORY="/opt/analytical-platform" \
+    ANALYTICAL_PLATFORM_DIRECTORY="/opt/analyticalplatform" \
     DEBIAN_FRONTEND="noninteractive" \
     PIP_BREAK_SYSTEM_PACKAGES="1" \
-    AWS_CLI_VERSION="2.22.12" \
-    CUDA_VERSION="12.6.1" \
+    AWS_CLI_VERSION="2.22.20" \
+    CUDA_VERSION="12.6.3" \
     NVIDIA_DISABLE_REQUIRE="true" \
     NVIDIA_CUDA_CUDART_VERSION="12.6.77-1" \
     NVIDIA_CUDA_COMPAT_VERSION="560.35.05-0ubuntu1" \
     NVIDIA_VISIBLE_DEVICES="all" \
     NVIDIA_DRIVER_CAPABILITIES="compute,utility" \
     LD_LIBRARY_PATH="/usr/local/nvidia/lib:/usr/local/nvidia/lib64" \
-    PATH="/usr/local/nvidia/bin:/usr/local/cuda/bin:${HOME}/.local/bin:${PATH}"
+    PATH="/usr/local/nvidia/bin:/usr/local/cuda/bin:/home/analyticalplatform/.local/bin:${PATH}"
 
 SHELL ["/bin/bash", "-e", "-u", "-o", "pipefail", "-c"]
 
@@ -50,7 +50,7 @@ apt-get update --yes
 apt-get install --yes \
   "apt-transport-https=2.7.14build2" \
   "ca-certificates=20240203" \
-  "curl=8.5.0-2ubuntu10.5" \
+  "curl=8.5.0-2ubuntu10.6" \
   "git=1:2.43.0-1ubuntu7.1" \
   "jq=1.7.1-3build1" \
   "python3.12=3.12.3-1ubuntu0.3" \
@@ -112,5 +112,5 @@ apt-get clean --yes
 rm --force --recursive /var/lib/apt/lists/* 3bf863cc.pub nvidia.gpg
 EOF
 
-USER ${CONTAINER_USER}
+USER ${CONTAINER_UID}
 WORKDIR ${ANALYTICAL_PLATFORM_DIRECTORY}
