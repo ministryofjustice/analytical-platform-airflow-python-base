@@ -2,7 +2,7 @@
 schemaVersion: 2.0.0
 
 containerRunOptions:
-  user: "analyticalplatform"
+  user: "1000"
 
 commandTests:
   - name: "ubuntu"
@@ -42,11 +42,11 @@ commandTests:
   - name: "aws"
     command: "aws"
     args: ["--version"]
-    expectedOutput: ["aws-cli/2.22.12"]
+    expectedOutput: ["aws-cli/2.22.20"]
 
 fileExistenceTests:
-  - name: "/opt/analytical-platform"
-    path: "/opt/analytical-platform"
+  - name: "/opt/analyticalplatform"
+    path: "/opt/analyticalplatform"
     shouldExist: true
     uid: 1000
     gid: 1000
@@ -56,8 +56,8 @@ fileExistenceTests:
     shouldExist: true
 
 metadataTest:
-  user: "analyticalplatform"
-  workdir: "/opt/analytical-platform"
+  user: "1000"
+  workdir: "/opt/analyticalplatform"
 
   labels:
     - key: "org.opencontainers.image.vendor"
@@ -89,7 +89,7 @@ metadataTest:
       value: "1000"
 
     - key: "ANALYTICAL_PLATFORM_DIRECTORY"
-      value: "/opt/analytical-platform"
+      value: "/opt/analyticalplatform"
 
     - key: "DEBIAN_FRONTEND"
       value: "noninteractive"
