@@ -42,7 +42,7 @@ commandTests:
   - name: "aws"
     command: "aws"
     args: ["--version"]
-    expectedOutput: ["aws-cli/2.23.3"]
+    expectedOutput: ["aws-cli/2.24.0"]
 
 fileExistenceTests:
   - name: "/opt/analyticalplatform"
