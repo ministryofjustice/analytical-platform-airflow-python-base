@@ -15,7 +15,7 @@ ENV CONTAINER_USER="analyticalplatform" \
     ANALYTICAL_PLATFORM_DIRECTORY="/opt/analyticalplatform" \
     DEBIAN_FRONTEND="noninteractive" \
     PIP_BREAK_SYSTEM_PACKAGES="1" \
-    AWS_CLI_VERSION="2.24.0" \
+    AWS_CLI_VERSION="2.24.9" \
     CUDA_VERSION="12.8.0" \
     NVIDIA_DISABLE_REQUIRE="true" \
     NVIDIA_CUDA_CUDART_VERSION="12.8.57-1" \
@@ -53,7 +53,7 @@ apt-get install --yes \
   "curl=8.5.0-2ubuntu10.6" \
   "git=1:2.43.0-1ubuntu7.2" \
   "jq=1.7.1-3build1" \
-  "python3.12=3.12.3-1ubuntu0.4" \
+  "python3.12=3.12.3-1ubuntu0.5" \
   "python3-pip=24.0+dfsg-1ubuntu1.1" \
   "unzip=6.0-28ubuntu4.1"
 
