@@ -12,11 +12,13 @@ This repository contains the code for building the Python base image used by Ana
 
 This image is built on Ubuntu 24.04 LTS and includes the following software:
 
-- AWS CLI
+- [AWS CLI](https://aws.amazon.com/cli/)
 
-- Python 3.12
+- [Python 3.12](https://www.python.org/downloads/release/python-3123/)
 
-- NVIDIA CUDA drivers
+- [NVIDIA CUDA drivers](https://developer.nvidia.com/cuda-faq)
+
+- [uv](https://github.com/astral-sh/uv)
 
 ## Running Locally
 
@@ -93,3 +95,7 @@ apt-cache policy cuda-cudart-12-8
 
 apt-cache policy cuda-compat-12-8
 ```
+
+### uv
+
+Release for uv are maintained on [GitHub](https://github.com/astral-sh/uv/releases).

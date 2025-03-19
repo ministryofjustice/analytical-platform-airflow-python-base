@@ -1,6 +1,6 @@
 #checkov:skip=CKV_DOCKER_2: HEALTHCHECK not required - Health checks are implemented downstream of this image
 
-FROM public.ecr.aws/ubuntu/ubuntu@sha256:562b04c2e7aedb72b0f919d659f6c607087f839d584037f096d9cd97b308006e
+FROM public.ecr.aws/ubuntu/ubuntu:24.04@sha256:562b04c2e7aedb72b0f919d659f6c607087f839d584037f096d9cd97b308006e
 
 LABEL org.opencontainers.image.vendor="Ministry of Justice" \
       org.opencontainers.image.authors="Analytical Platform (analytical-platform@digital.justice.gov.uk)" \
@@ -15,13 +15,14 @@ ENV CONTAINER_USER="analyticalplatform" \
     ANALYTICAL_PLATFORM_DIRECTORY="/opt/analyticalplatform" \
     DEBIAN_FRONTEND="noninteractive" \
     PIP_BREAK_SYSTEM_PACKAGES="1" \
-    AWS_CLI_VERSION="2.24.9" \
-    CUDA_VERSION="12.8.0" \
+    AWS_CLI_VERSION="2.24.24" \
+    CUDA_VERSION="12.8.1" \
     NVIDIA_DISABLE_REQUIRE="true" \
     NVIDIA_CUDA_CUDART_VERSION="12.8.57-1" \
     NVIDIA_CUDA_COMPAT_VERSION="570.86.15-0ubuntu1" \
     NVIDIA_VISIBLE_DEVICES="all" \
     NVIDIA_DRIVER_CAPABILITIES="compute,utility" \
+    UV_VERSION="0.6.7" \
     LD_LIBRARY_PATH="/usr/local/nvidia/lib:/usr/local/nvidia/lib64" \
     PATH="/usr/local/nvidia/bin:/usr/local/cuda/bin:/home/analyticalplatform/.local/bin:${PATH}"
 
@@ -110,6 +111,21 @@ echo "/usr/local/nvidia/lib64" >> /etc/ld.so.conf.d/nvidia.conf
 apt-get clean --yes
 
 rm --force --recursive /var/lib/apt/lists/* 3bf863cc.pub nvidia.gpg
+EOF
+
+# uv
+RUN <<EOF
+curl --location --fail-with-body \
+  "https://github.com/astral-sh/uv/releases/download/${UV_VERSION}/uv-x86_64-unknown-linux-gnu.tar.gz" \
+  --output uv.tar.gz
+
+tar --extract --file uv.tar.gz
+
+install --owner nobody --group nogroup --mode 0755 uv-x86_64-unknown-linux-gnu/uv /usr/local/bin/uv
+
+install --owner nobody --group nogroup --mode 0755 uv-x86_64-unknown-linux-gnu/uvx /usr/local/bin/uvx
+
+rm --force --recursive uv.tar.gz uv-x86_64-unknown-linux-gnu
 EOF
 
 USER ${CONTAINER_UID}
