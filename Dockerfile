@@ -15,6 +15,7 @@ ENV CONTAINER_USER="analyticalplatform" \
     CONTAINER_GROUP="analyticalplatform" \
     CONTAINER_GID="1000" \
     AIRFLOW_RUNTIME="python" \
+    AIRFLOW_RUNTIME_VERSION="${AIRFLOW_RUNTIME_VERSION}" \
     ANALYTICAL_PLATFORM_DIRECTORY="/opt/analyticalplatform" \
     DEBIAN_FRONTEND="noninteractive" \
     PIP_BREAK_SYSTEM_PACKAGES="1" \
