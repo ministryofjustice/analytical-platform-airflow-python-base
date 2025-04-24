@@ -1,6 +1,6 @@
 #checkov:skip=CKV_DOCKER_2: HEALTHCHECK not required - Health checks are implemented downstream of this image
 
-FROM public.ecr.aws/ubuntu/ubuntu:24.04@sha256:4d860156ddae5923ed93d6b161c6b2f0f437d8086210f087db85b83fc2689914
+FROM public.ecr.aws/ubuntu/ubuntu:24.04@sha256:e3b7fe80bcb7bd1b8c2301b8cf88973aa04774afdcf34d645897117dcbc0bc4a
 
 LABEL org.opencontainers.image.vendor="Ministry of Justice" \
       org.opencontainers.image.authors="Analytical Platform (analytical-platform@digital.justice.gov.uk)" \
@@ -19,14 +19,14 @@ ENV CONTAINER_USER="analyticalplatform" \
     ANALYTICAL_PLATFORM_DIRECTORY="/opt/analyticalplatform" \
     DEBIAN_FRONTEND="noninteractive" \
     PIP_BREAK_SYSTEM_PACKAGES="1" \
-    AWS_CLI_VERSION="2.25.11" \
+    AWS_CLI_VERSION="2.27.0" \
     CUDA_VERSION="12.8.1" \
     NVIDIA_DISABLE_REQUIRE="true" \
     NVIDIA_CUDA_CUDART_VERSION="12.8.90-1" \
-    NVIDIA_CUDA_COMPAT_VERSION="570.124.06-0ubuntu1" \
+    NVIDIA_CUDA_COMPAT_VERSION="570.133.20-0ubuntu1" \
     NVIDIA_VISIBLE_DEVICES="all" \
     NVIDIA_DRIVER_CAPABILITIES="compute,utility" \
-    UV_VERSION="0.6.12" \
+    UV_VERSION="0.6.16" \
     LD_LIBRARY_PATH="/usr/local/nvidia/lib:/usr/local/nvidia/lib64" \
     PATH="/usr/local/nvidia/bin:/usr/local/cuda/bin:/home/analyticalplatform/.local/bin:${PATH}"
 
