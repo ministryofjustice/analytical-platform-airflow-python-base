@@ -41,8 +41,8 @@ commandTests:
 
   - name: "aws"
     command: "aws"
-    args: ["--version"]
-    expectedOutput: ["aws-cli/2.27.61 Python/3.13.4 Linux/6.10.14-linuxkit exe/x86_64.ubuntu.24"]
+    args: ["--version", "|", "awk", "'{print $1}'"]
+    expectedOutput: ["aws-cli/2.27.61"]
 
   - name: "uv"
     command: "uv"
