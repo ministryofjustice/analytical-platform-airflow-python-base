@@ -41,7 +41,7 @@ commandTests:
 
   - name: "aws"
     command: "aws"
-    args: ["--version", "|", "awk", "'{print $1}'"]
+    args: ["--version"]
     expectedOutput: ["aws-cli/2.27.61"]
 
   - name: "uv"
