@@ -6,3 +6,7 @@ AVD-DS-0029
 
 ## Trivy: Healthchecks applied downstream
 AVD-DS-0026
+
+## Trivy: temp remove following patching 20251023
+CVE-2025-22036
+CVE-2025-39735
