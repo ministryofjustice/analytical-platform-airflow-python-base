@@ -1,6 +1,6 @@
 #checkov:skip=CKV_DOCKER_2: HEALTHCHECK not required - Health checks are implemented downstream of this image
 
-FROM public.ecr.aws/ubuntu/ubuntu:24.04@sha256:ef59d9e82939bbce08973bdffb8761b025f75369fb7d2882cdc4938b5a9e992e
+FROM public.ecr.aws/ubuntu/ubuntu:24.04@sha256:6b4c0f97bc73e76ac20ef992258e9b8c831b7755d2047d83109da8eb279881fe
 LABEL org.opencontainers.image.vendor="Ministry of Justice" \
       org.opencontainers.image.authors="Analytical Platform (analytical-platform@digital.justice.gov.uk)" \
       org.opencontainers.image.title="Airflow Python Base" \
@@ -18,14 +18,14 @@ ENV CONTAINER_USER="analyticalplatform" \
     ANALYTICAL_PLATFORM_DIRECTORY="/opt/analyticalplatform" \
     DEBIAN_FRONTEND="noninteractive" \
     PIP_BREAK_SYSTEM_PACKAGES="1" \
-    AWS_CLI_VERSION="2.32.14" \
+    AWS_CLI_VERSION="2.33.2" \
     CUDA_VERSION="12.9.1" \
     NVIDIA_DISABLE_REQUIRE="true" \
     NVIDIA_CUDA_CUDART_VERSION="12.9.79-1" \
     NVIDIA_CUDA_COMPAT_VERSION="575.57.08-0ubuntu1" \
     NVIDIA_VISIBLE_DEVICES="all" \
     NVIDIA_DRIVER_CAPABILITIES="compute,utility" \
-    UV_VERSION="0.9.17" \
+    UV_VERSION="0.9.26" \
     LD_LIBRARY_PATH="/usr/local/nvidia/lib:/usr/local/nvidia/lib64" \
     PATH="/usr/local/nvidia/bin:/usr/local/cuda/bin:/home/analyticalplatform/.local/bin:${PATH}"
 
@@ -57,7 +57,7 @@ apt-get install --yes \
   "curl=8.5.0-2ubuntu10.6" \
   "git=1:2.43.0-1ubuntu7.3" \
   "jq=1.7.1-3ubuntu0.24.04.1" \
-  "python3.12=3.12.3-1ubuntu0.9" \
+  "python3.12=3.12.3-1ubuntu0.10" \
   "python3-pip=24.0+dfsg-1ubuntu1.3" \
   "unzip=6.0-28ubuntu4.1"
 
