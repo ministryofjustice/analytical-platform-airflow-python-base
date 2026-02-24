@@ -1,4 +1,4 @@
-# As of 20/02/2025 there are no CRITICAL or HIGH CVEs for this image
+# As of 24/02/2026 there are no CRITICAL
 
 ## Trivy: misreading due to heredoc structure
 AVD-DS-0017 exp:2026-04-28
@@ -6,3 +6,15 @@ AVD-DS-0029 exp:2026-04-28
 
 ## Trivy: Healthchecks applied downstream
 AVD-DS-0026 exp:2026-04-28
+
+## CVE-2026-24049 (Python (python-pkg) - wheel (METADATA))
+CVE-2026-24049 exp:2026-03-28
+
+## CVE-2026-1669 (Python - Keras (METADATA))
+CVE-2026-1669 exp: 2026-03-28
+
+## CVE-2026-25990 (Python - Pillow (METADATA))
+CVE-2026-25990 exp: 2026-03-28
+
+## CVE-2026-0994 (Python - Protobuf (METADATA))
+CVE-2026-0994 exp: 2026-03-28
