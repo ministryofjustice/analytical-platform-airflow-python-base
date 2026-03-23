@@ -3,9 +3,6 @@
 IMAGE_NAME ?= ghcr.io/ministryofjustice/analytical-platform-airflow-python-base
 IMAGE_TAG  ?= local
 
-TRIVY_DB_REPOSITORY ?= public.ecr.aws/aquasecurity/trivy-db:2
-TRIVY_JAVA_DB_REPOSITORY ?= public.ecr.aws/aquasecurity/trivy-java-db:1
-
 run: build
 	docker run --rm -it $(IMAGE_NAME):$(IMAGE_TAG)
 
