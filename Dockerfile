@@ -1,6 +1,6 @@
 #checkov:skip=CKV_DOCKER_2: HEALTHCHECK not required - Health checks are implemented downstream of this image
 
-FROM public.ecr.aws/ubuntu/ubuntu:24.04@sha256:67efaecc0031a612cf7bb3c863407018dbbef0a971f62032b77aa542ac8ac0d2
+FROM public.ecr.aws/ubuntu/ubuntu:24.04@sha256:b1940c8ecf8ff591053cc5db0303fb882f9fafec50f26892a870bcbe1b30d25a
 LABEL org.opencontainers.image.vendor="Ministry of Justice" \
       org.opencontainers.image.authors="Analytical Platform (analytical-platform@digital.justice.gov.uk)" \
       org.opencontainers.image.title="Airflow Python Base" \
@@ -54,10 +54,10 @@ apt-get update --yes
 apt-get install --yes \
   "apt-transport-https=2.8.3" \
   "ca-certificates=20240203" \
-  "curl=8.5.0-2ubuntu10.7" \
+  "curl=8.5.0-2ubuntu10.8" \
   "git=1:2.43.0-1ubuntu7.3" \
   "jq=1.7.1-3ubuntu0.24.04.1" \
-  "python3.12=3.12.3-1ubuntu0.11" \
+  "python3.12=3.12.3-1ubuntu0.12" \
   "python3-pip=24.0+dfsg-1ubuntu1.3" \
   "unzip=6.0-28ubuntu4.1"
 
