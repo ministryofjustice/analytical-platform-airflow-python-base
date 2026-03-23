@@ -1,4 +1,4 @@
-.PHONY: build scan test run
+.PHONY: build test run
 
 IMAGE_NAME ?= ghcr.io/ministryofjustice/analytical-platform-airflow-python-base
 IMAGE_TAG  ?= local
@@ -11,9 +11,6 @@ run: build
 
 test: build
 	container-structure-test test --platform linux/amd64 --config test/container-structure-test.yml --image $(IMAGE_NAME):$(IMAGE_TAG)
-
-scan: build
-	trivy image --platform linux/amd64 --severity HIGH,CRITICAL $(IMAGE_NAME):$(IMAGE_TAG)
 
 build:
 	@ARCH=`uname --machine`; \
