@@ -1,0 +1,6 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.25.0
+ignore:
+    SNYK-UBUNTU2404-LIBGCRYPT20-6693674:
+        - '*':
+            reason: 'Low Severity, Example'
