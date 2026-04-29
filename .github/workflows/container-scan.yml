@@ -14,3 +14,5 @@ jobs:
     permissions:
       contents: read
     uses: ministryofjustice/analytical-platform-airflow-github-actions/.github/workflows/shared-scan-container.yml@42bc0159e43ebec0a6eb944c875d78f28ab6fa8a # v5.0.0
+    with:
+      runtime: python
