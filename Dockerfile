@@ -56,8 +56,8 @@ apt-get install --yes \
   "ca-certificates=20240203" \
   "curl=8.5.0-2ubuntu10.8" \
   "git=1:2.43.0-1ubuntu7.3" \
-  "jq=1.7.1-3ubuntu0.24.04.1" \
-  "python3.12=3.12.3-1ubuntu0.12" \
+  "jq=1.7.1-3ubuntu0.24.04.2" \
+  "python3.12=3.12.3-1ubuntu0.13" \
   "python3-pip=24.0+dfsg-1ubuntu1.3" \
   "unzip=6.0-28ubuntu4.1"
 
