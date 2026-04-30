@@ -42,17 +42,17 @@ commandTests:
   - name: "aws"
     command: "aws"
     args: ["--version"]
-    expectedOutput: ["aws-cli/2.33.29"]
+    expectedOutput: ["aws-cli/2.34.39"]
 
   - name: "uv"
     command: "uv"
     args: ["--version"]
-    expectedOutput: ["uv 0.10.6"]
+    expectedOutput: ["uv 0.11.8"]
 
   - name: "uvx"
     command: "uvx"
     args: ["--version"]
-    expectedOutput: ["uvx 0.10.6"]
+    expectedOutput: ["uvx 0.11.8"]
 
 fileExistenceTests:
   - name: "/opt/analyticalplatform"
