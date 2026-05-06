@@ -6,3 +6,6 @@ AVD-DS-0029 exp:2026-04-28
 
 ## Trivy: Healthchecks applied downstream
 AVD-DS-0026 exp:2026-04-28
+
+## as of 06/05/2026 uv has not released a version containing the dependency upgrade.
+GHSA-82j2-j2ch-gfr8 exp:2026-05-20
