@@ -26,7 +26,7 @@ ENV CONTAINER_USER="analyticalplatform" \
     NVIDIA_CUDA_CUDART_VERSION="13.1.80-1" \
     NVIDIA_VISIBLE_DEVICES="all" \
     NVIDIA_DRIVER_CAPABILITIES="compute,utility" \
-    UV_VERSION="0.11.8" \
+    UV_VERSION="0.11.9" \
     LD_LIBRARY_PATH="/usr/local/nvidia/lib:/usr/local/nvidia/lib64" \
     PATH="/usr/local/nvidia/bin:/usr/local/cuda/bin:/home/analyticalplatform/.local/bin:${PATH}"
 
