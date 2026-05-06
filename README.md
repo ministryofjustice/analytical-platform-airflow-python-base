@@ -6,7 +6,7 @@
 
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/ministryofjustice/analytical-platform-airflow-python-base)
 
-This repository contains the code for building the Python base image used by Analytical Platform's Airflow service
+This repository contains the code for building the Python base image used by Analytical Platform's Airflow service.
 
 ## Features
 

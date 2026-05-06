@@ -26,7 +26,7 @@ ENV CONTAINER_USER="analyticalplatform" \
     NVIDIA_CUDA_CUDART_VERSION="13.1.80-1" \
     NVIDIA_VISIBLE_DEVICES="all" \
     NVIDIA_DRIVER_CAPABILITIES="compute,utility" \
-    UV_VERSION="0.11.8" \
+    UV_VERSION="0.11.9" \
     LD_LIBRARY_PATH="/usr/local/nvidia/lib:/usr/local/nvidia/lib64" \
     PATH="/usr/local/nvidia/bin:/usr/local/cuda/bin:/home/analyticalplatform/.local/bin:${PATH}"
 
@@ -55,7 +55,7 @@ apt-get update --yes
 apt-get install --yes \
   "apt-transport-https=2.8.3" \
   "ca-certificates=20240203" \
-  "curl=8.5.0-2ubuntu10.8" \
+  "curl=8.5.0-2ubuntu10.9" \
   "git=1:2.43.0-1ubuntu7.3" \
   "jq=1.7.1-3ubuntu0.24.04.2" \
   "python3.12=3.12.3-1ubuntu0.13" \
