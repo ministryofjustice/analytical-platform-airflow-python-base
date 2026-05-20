@@ -1,0 +1,17 @@
+---
+name: 🔒 Snyk Container Scan
+
+on:
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions: {}
+
+jobs:
+  snyk-container-scan:
+    name: Snyk Container Scan
+    uses: ministryofjustice/analytical-platform-airflow-github-actions/.github/workflows/shared-snyk-scan.yml@be63b313f49915001396ba92c00c14223dce0834
+    with:
+      runtime: python
