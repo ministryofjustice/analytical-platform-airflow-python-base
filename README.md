@@ -54,7 +54,7 @@ docker image inspect --format='{{ index .RepoDigests 0 }}' public.ecr.aws/ubuntu
 
 ### Base APT Packages
 
-The latest versions of the APT packages can be obtained by running the following
+The latest versions of the APT packages can be obtained by asking Copilot to check for apt package updates, or running the following
 
 ```bash
 docker run -it --rm --platform linux/amd64 public.ecr.aws/ubuntu/ubuntu:24.04

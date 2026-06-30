@@ -19,4 +19,3 @@ jobs:
       runtime: python
     secrets:
       cve-scan-slack-webhook-url: ${{ secrets.ANALYTICAL_PLATFORM_CVE_SCAN_SLACK_WEBHOOK_URL }}
-    
