@@ -19,7 +19,7 @@ ENV CONTAINER_USER="analyticalplatform" \
     ANALYTICAL_PLATFORM_DIRECTORY="/opt/analyticalplatform" \
     DEBIAN_FRONTEND="noninteractive" \
     PIP_BREAK_SYSTEM_PACKAGES="1" \
-    AWS_CLI_VERSION="2.35.8" \
+    AWS_CLI_VERSION="2.35.12" \
     CUDA_VERSION="13.2.0" \
     NVIDIA_DISABLE_REQUIRE="true" \
     NVIDIA_CUDA_COMPAT_VERSION="595.71.05-1ubuntu1" \
@@ -53,12 +53,16 @@ RUN <<EOF
 apt-get update --yes
 
 apt-get install --yes \
-  "apt-transport-https=2.8.3" \
+  "apt-transport-https=2.8.2" \
   "ca-certificates=20240203" \
-  "curl=8.5.0-2ubuntu10.9" \
+  "curl=8.5.0-2ubuntu10.7" \
   "git=1:2.43.0-1ubuntu7.3" \
   "jq=1.7.1-3ubuntu0.24.04.2" \
   "libgnutls30t64=3.8.3-1.1ubuntu3.6" \
+  "libperl5.38t64=5.38.2-3.2ubuntu0.3" \
+  "perl=5.38.2-3.2ubuntu0.3" \
+  "perl-base=5.38.2-3.2ubuntu0.3" \
+  "perl-modules-5.38=5.38.2-3.2ubuntu0.3" \
   "python3.12=3.12.3-1ubuntu0.13" \
   "python3-pip=24.0+dfsg-1ubuntu1.3" \
   "unzip=6.0-28ubuntu4.1"
