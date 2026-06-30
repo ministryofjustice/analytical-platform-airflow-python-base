@@ -7,3 +7,4 @@ ignore:
   # Patched upstream, awaiting base image update - see README on how to check for updates.
   - vulnerability: CVE-2026-9669
   # vuln coming from aws cli - waiting for new release of aws cli to fix.
+  
