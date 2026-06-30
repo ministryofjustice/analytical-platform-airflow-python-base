@@ -3,7 +3,7 @@ name: ⏰ Scheduled Container Scan
 
 on:
   schedule:
-    - cron: "0 15 * * 1-5" # Every weekday at 9AM UTC
+    - cron: "05 15 * * 1-5" # Every weekday at 9AM UTC
   workflow_dispatch:
 
 permissions: {}
