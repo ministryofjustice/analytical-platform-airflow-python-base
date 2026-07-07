@@ -55,7 +55,7 @@ apt-get update --yes
 apt-get install --yes \
   "apt-transport-https=2.8.3" \
   "ca-certificates=20260601~24.04.1" \
-  "curl=8.5.0-2ubuntu10.9" \
+  "curl=8.5.0-2ubuntu10.10" \
   "git=1:2.43.0-1ubuntu7.3" \
   "jq=1.7.1-3ubuntu0.24.04.2" \
   "libgnutls30t64=3.8.3-1.1ubuntu3.6" \
@@ -63,7 +63,7 @@ apt-get install --yes \
   "perl=5.38.2-3.2ubuntu0.3" \
   "perl-base=5.38.2-3.2ubuntu0.3" \
   "perl-modules-5.38=5.38.2-3.2ubuntu0.3" \
-  "python3.12=3.12.3-1ubuntu0.13" \
+  "python3.12=3.12.3-1ubuntu0.15" \
   "python3-pip=24.0+dfsg-1ubuntu1.3" \
   "unzip=6.0-28ubuntu4.1"
 
