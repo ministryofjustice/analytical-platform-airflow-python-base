@@ -57,6 +57,7 @@ apt-get install --yes \
   "ca-certificates=20260601~24.04.1" \
   "curl=8.5.0-2ubuntu10.10" \
   "git=1:2.43.0-1ubuntu7.3" \
+  "gzip=1.12-1ubuntu3.2" \
   "jq=1.7.1-3ubuntu0.24.04.2" \
   "libgnutls30t64=3.8.3-1.1ubuntu3.6" \
   "libperl5.38t64=5.38.2-3.2ubuntu0.3" \
