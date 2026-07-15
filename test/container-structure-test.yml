@@ -42,7 +42,7 @@ commandTests:
   - name: "aws"
     command: "aws"
     args: ["--version"]
-    expectedOutput: ["aws-cli/2.35.16"]
+    expectedOutput: ["aws-cli/2.35.23"]
 
   - name: "uv"
     command: "uv"
