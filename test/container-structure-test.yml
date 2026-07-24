@@ -47,12 +47,12 @@ commandTests:
   - name: "uv"
     command: "uv"
     args: ["--version"]
-    expectedOutput: ["uv 0.11.28"]
+    expectedOutput: ["uv 0.11.31"]
 
   - name: "uvx"
     command: "uvx"
     args: ["--version"]
-    expectedOutput: ["uvx 0.11.28"]
+    expectedOutput: ["uvx 0.11.31"]
 
 fileExistenceTests:
   - name: "/opt/analyticalplatform"
