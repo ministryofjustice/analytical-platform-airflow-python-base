@@ -8,3 +8,7 @@ ignore:
   - vulnerability: CVE-2026-9669
   # vuln coming from aws cli - cannot bump python version
   - vulnerability: CVE-2026-15308
+
+  # transitice dependency - waiting for base image update
+  - vulnerability: CVE-2026-40355
+  - vulnerability: CVE-2026-40356
