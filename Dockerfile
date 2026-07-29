@@ -63,6 +63,11 @@ apt-get install --yes \
   "libncursesw6=6.4+20240113-1ubuntu2.1" \
   "libtinfo6=6.4+20240113-1ubuntu2.1" \
   "libperl5.38t64=5.38.2-3.2ubuntu0.3" \
+  "libc-bin=2.39-0ubuntu8.8" \
+  "libc-dev-bin=2.39-0ubuntu8.8" \
+  "libc-devtools=2.39-0ubuntu8.8" \
+  "libc6=2.39-0ubuntu8.8" \
+  "libc6-dev=2.39-0ubuntu8.8" \
   "ncurses-base=6.4+20240113-1ubuntu2.1" \
   "ncurses-bin=6.4+20240113-1ubuntu2.1" \
   "perl=5.38.2-3.2ubuntu0.3" \
