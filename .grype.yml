@@ -6,8 +6,10 @@ ignore:
   - vulnerability: CVE-2026-7210
   # Patched upstream, awaiting base image update - see README on how to check for updates.
   - vulnerability: CVE-2026-9669
-  # vuln coming from aws cli - cannot bump python version
+  # vuln coming from aws cli bundled python - cannot bump python version independently
   - vulnerability: CVE-2026-15308
+  - vulnerability: CVE-2026-11940
+  - vulnerability: CVE-2026-11972
 
   # transitice dependency - waiting for base image update
   - vulnerability: CVE-2026-40355
