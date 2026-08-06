@@ -103,7 +103,7 @@ Do not assume a specific Ubuntu version or package set. Always read the current 
 
      Note any packages that could not be upgraded and why.
 
-     Building and testing is handled by CI/CD.
+    Building and testing is handled by CI/CD.
      ```
 
    - Create the pull request:
@@ -114,8 +114,6 @@ Do not assume a specific Ubuntu version or package set. Always read the current 
      ```
 
    - Report the URL of the created pull request.
-
-Building and testing the image is handled by CI/CD, so it is not part of this runbook.
 
 ## Guardrails
 
