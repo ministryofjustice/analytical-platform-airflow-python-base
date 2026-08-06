@@ -28,8 +28,9 @@ Do not assume a specific Ubuntu version or package set. Always read the current 
 1. Create a single maintenance branch.
 2. Update the Ubuntu base image digest in the `FROM` line.
 3. Update the pinned APT package versions.
-4. Commit the changes using Conventional Commits.
-5. Push the branch and open a pull request with a clear title and description.
+4. When version assertions are affected, update `test/container-structure-test.yml` to keep expected versions aligned with the image changes.
+5. Commit the changes using Conventional Commits.
+6. Push the branch and open a pull request with a clear title and description.
 
 ## Execution Steps
 
@@ -71,9 +72,11 @@ Do not assume a specific Ubuntu version or package set. Always read the current 
 
 4. Confirm the `Dockerfile` still lists the same packages and the same image and tag as before (only digest and versions should differ).
 
-5. Commit the change to `Dockerfile` using [Conventional Commits](https://www.conventionalcommits.org/) (`build` type).
+5. If any software versions asserted in `test/container-structure-test.yml` are changed by the maintenance update (for example Ubuntu release, `git`, `python`, `pip`, `aws`, `uv`, or `uvx`), update the relevant `expectedOutput` values to match the new versions.
 
-6. Push the branch and open the pull request with the GitHub CLI.
+6. Commit the changes using [Conventional Commits](https://www.conventionalcommits.org/) (`build` type).
+
+7. Push the branch and open the pull request with the GitHub CLI.
 
    - The `git commit`, `git push`, and `gh` steps need the local Git/GitHub credentials and network access. When the terminal is sandboxed these are hidden, so run these steps with the required access (outside the sandbox) rather than stopping. A sandboxed `gh auth status` may report "not logged in" even when the terminal is authenticated; do not treat that as a blocker.
    - Set an explicit PR title: a [Conventional Commits](https://www.conventionalcommits.org/) `build:` summary that matches the commit (for example, `build: update base image digest and apt package versions`). Do not use `gh pr create --fill`, which derives the title from the branch name.
