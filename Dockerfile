@@ -55,9 +55,9 @@ apt-get update --yes
 apt-get install --yes \
   "apt-transport-https=2.8.3" \
   "ca-certificates=20260601~24.04.1" \
-  "curl=8.5.0-2ubuntu10.12" \
-  "libcurl3t64-gnutls=8.5.0-2ubuntu10.12" \
-  "libcurl4t64=8.5.0-2ubuntu10.12" \
+  "curl=8.5.0-2ubuntu10.13" \
+  "libcurl3t64-gnutls=8.5.0-2ubuntu10.13" \
+  "libcurl4t64=8.5.0-2ubuntu10.13" \
   "git=1:2.43.0-1ubuntu7.3" \
   "gzip=1.12-1ubuntu3.2" \
   "jq=1.7.1-3ubuntu0.24.04.2" \
@@ -70,12 +70,14 @@ apt-get install --yes \
   "libc-devtools=2.39-0ubuntu8.8" \
   "libc6=2.39-0ubuntu8.8" \
   "libc6-dev=2.39-0ubuntu8.8" \
+  "libssl3t64=3.0.13-0ubuntu3.15" \
   "ncurses-base=6.4+20240113-1ubuntu2.1" \
   "ncurses-bin=6.4+20240113-1ubuntu2.1" \
+  "openssl=3.0.13-0ubuntu3.15" \
   "perl=5.38.2-3.2ubuntu0.3" \
   "perl-base=5.38.2-3.2ubuntu0.3" \
   "perl-modules-5.38=5.38.2-3.2ubuntu0.3" \
-  "python3.12=3.12.3-1ubuntu0.15" \
+  "python3.12=3.12.3-1ubuntu0.16" \
   "python3-pip=24.0+dfsg-1ubuntu1.3" \
   "unzip=6.0-28ubuntu4.1"
 
