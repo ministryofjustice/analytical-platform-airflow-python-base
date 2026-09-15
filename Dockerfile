@@ -1,6 +1,6 @@
 #checkov:skip=CKV_DOCKER_2: HEALTHCHECK not required - Health checks are implemented downstream of this image
 
-FROM public.ecr.aws/ubuntu/ubuntu:24.04@sha256:a54764b5b6340c272ffb45e303fe4c8064bbdfb76d732b325b79ae6b92900e4c
+FROM public.ecr.aws/ubuntu/ubuntu:24.04@sha256:bd96226c844259db876a6041a99d9a5aad65b3bfdb8df039441b17bbc4f756b8
 
 LABEL org.opencontainers.image.vendor="Ministry of Justice" \
       org.opencontainers.image.authors="Analytical Platform (analytical-platform@digital.justice.gov.uk)" \
@@ -65,11 +65,11 @@ apt-get install --yes \
   "libncursesw6=6.4+20240113-1ubuntu2.2" \
   "libtinfo6=6.4+20240113-1ubuntu2.2" \
   "libperl5.38t64=5.38.2-3.2ubuntu0.4" \
-  "libc-bin=2.39-0ubuntu8.8" \
-  "libc-dev-bin=2.39-0ubuntu8.8" \
-  "libc-devtools=2.39-0ubuntu8.8" \
-  "libc6=2.39-0ubuntu8.8" \
-  "libc6-dev=2.39-0ubuntu8.8" \
+  "libc-bin=2.39-0ubuntu8.9" \
+  "libc-dev-bin=2.39-0ubuntu8.9" \
+  "libc-devtools=2.39-0ubuntu8.9" \
+  "libc6=2.39-0ubuntu8.9" \
+  "libc6-dev=2.39-0ubuntu8.9" \
   "libssl3t64=3.0.13-0ubuntu3.15" \
   "ncurses-base=6.4+20240113-1ubuntu2.2" \
   "ncurses-bin=6.4+20240113-1ubuntu2.2" \
@@ -77,7 +77,7 @@ apt-get install --yes \
   "perl=5.38.2-3.2ubuntu0.4" \
   "perl-base=5.38.2-3.2ubuntu0.4" \
   "perl-modules-5.38=5.38.2-3.2ubuntu0.4" \
-  "python3.12=3.12.3-1ubuntu0.16" \
+  "python3.12=3.12.3-1ubuntu0.17" \
   "python3-pip=24.0+dfsg-1ubuntu1.3" \
   "unzip=6.0-28ubuntu4.1"
 
