@@ -61,6 +61,7 @@ apt-get install --yes \
   "git=1:2.43.0-1ubuntu7.3" \
   "gzip=1.12-1ubuntu3.2" \
   "jq=1.7.1-3ubuntu0.24.04.2" \
+  "libaom3=3.8.2-2ubuntu0.2" \
   "libgnutls30t64=3.8.3-1.1ubuntu3.6" \
   "libncursesw6=6.4+20240113-1ubuntu2.2" \
   "libtinfo6=6.4+20240113-1ubuntu2.2" \
