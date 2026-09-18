@@ -61,10 +61,11 @@ apt-get install --yes \
   "git=1:2.43.0-1ubuntu7.3" \
   "gzip=1.12-1ubuntu3.2" \
   "jq=1.7.1-3ubuntu0.24.04.2" \
+  "libaom3=3.8.2-2ubuntu0.2" \
   "libgnutls30t64=3.8.3-1.1ubuntu3.6" \
   "libncursesw6=6.4+20240113-1ubuntu2.2" \
   "libtinfo6=6.4+20240113-1ubuntu2.2" \
-  "libperl5.38t64=5.38.2-3.2ubuntu0.4" \
+  "libperl5.38t64=5.38.2-3.2ubuntu0.6" \
   "libc-bin=2.39-0ubuntu8.9" \
   "libc-dev-bin=2.39-0ubuntu8.9" \
   "libc-devtools=2.39-0ubuntu8.9" \
@@ -74,9 +75,9 @@ apt-get install --yes \
   "ncurses-base=6.4+20240113-1ubuntu2.2" \
   "ncurses-bin=6.4+20240113-1ubuntu2.2" \
   "openssl=3.0.13-0ubuntu3.15" \
-  "perl=5.38.2-3.2ubuntu0.4" \
-  "perl-base=5.38.2-3.2ubuntu0.4" \
-  "perl-modules-5.38=5.38.2-3.2ubuntu0.4" \
+  "perl=5.38.2-3.2ubuntu0.6" \
+  "perl-base=5.38.2-3.2ubuntu0.6" \
+  "perl-modules-5.38=5.38.2-3.2ubuntu0.6" \
   "python3.12=3.12.3-1ubuntu0.17" \
   "python3-pip=24.0+dfsg-1ubuntu1.3" \
   "unzip=6.0-28ubuntu4.1"
