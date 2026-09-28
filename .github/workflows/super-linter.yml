@@ -20,5 +20,6 @@ jobs:
     with:
       super-linter-variables: |
         {
-          "LINTER_RULES_PATH": "."
+          "LINTER_RULES_PATH": ".",
+          "FILTER_REGEX_EXCLUDE": ".*(apm\\.lock\\.yaml|mcp\\.json)$"
         }
