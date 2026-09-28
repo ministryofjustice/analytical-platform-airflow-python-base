@@ -19,14 +19,14 @@ ENV CONTAINER_USER="analyticalplatform" \
     ANALYTICAL_PLATFORM_DIRECTORY="/opt/analyticalplatform" \
     DEBIAN_FRONTEND="noninteractive" \
     PIP_BREAK_SYSTEM_PACKAGES="1" \
-    AWS_CLI_VERSION="2.35.23" \
+    AWS_CLI_VERSION="2.37.4" \
     CUDA_VERSION="13.2.0" \
     NVIDIA_DISABLE_REQUIRE="true" \
     NVIDIA_CUDA_COMPAT_VERSION="595.71.05-1ubuntu1" \
     NVIDIA_CUDA_CUDART_VERSION="13.2.75-1" \
     NVIDIA_VISIBLE_DEVICES="all" \
     NVIDIA_DRIVER_CAPABILITIES="compute,utility" \
-    UV_VERSION="0.12.18" \
+    UV_VERSION="0.12.19" \
     LD_LIBRARY_PATH="/usr/local/nvidia/lib:/usr/local/nvidia/lib64" \
     PATH="/usr/local/nvidia/bin:/usr/local/cuda/bin:/home/analyticalplatform/.local/bin:${PATH}"
 
@@ -55,9 +55,9 @@ apt-get update --yes
 apt-get install --yes \
   "apt-transport-https=2.8.3" \
   "ca-certificates=20260601~24.04.1" \
-  "curl=8.5.0-2ubuntu10.13" \
-  "libcurl3t64-gnutls=8.5.0-2ubuntu10.13" \
-  "libcurl4t64=8.5.0-2ubuntu10.13" \
+  "curl=8.5.0-2ubuntu10.15" \
+  "libcurl3t64-gnutls=8.5.0-2ubuntu10.15" \
+  "libcurl4t64=8.5.0-2ubuntu10.15" \
   "git=1:2.43.0-1ubuntu7.3" \
   "gzip=1.12-1ubuntu3.2" \
   "jq=1.7.1-3ubuntu0.24.04.2" \
