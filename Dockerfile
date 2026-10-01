@@ -71,10 +71,10 @@ apt-get install --yes \
   "libc-devtools=2.39-0ubuntu8.9" \
   "libc6=2.39-0ubuntu8.9" \
   "libc6-dev=2.39-0ubuntu8.9" \
-  "libssl3t64=3.0.13-0ubuntu3.15" \
+  "libssl3t64=3.0.13-0ubuntu3.16" \
   "ncurses-base=6.4+20240113-1ubuntu2.2" \
   "ncurses-bin=6.4+20240113-1ubuntu2.2" \
-  "openssl=3.0.13-0ubuntu3.15" \
+  "openssl=3.0.13-0ubuntu3.16" \
   "perl=5.38.2-3.2ubuntu0.6" \
   "perl-base=5.38.2-3.2ubuntu0.6" \
   "perl-modules-5.38=5.38.2-3.2ubuntu0.6" \
