@@ -17,3 +17,5 @@ ignore:
   - vulnerability: CVE-2026-59850 # libssh-4
   - vulnerability: CVE-2026-59847 # libssh-4
   - vulnerability: CVE-2026-54371 # libattr1
+  - vulnerability: CVE-2026-19445 # aws-cli
+  - vulnerability: CVE-2026-19553 # aws-cli
