@@ -130,8 +130,8 @@ If no APT package versions changed, omit the entire `### APT packages` section (
 
 Include rows for changed AWS CLI, CUDA, and uv versions, including CUDA package names if the package family changed.
 
-| Component | Before | After |
-| --------- | ------ | ----- |
+| Component | Before  | After   |
+| --------- | ------- | ------- |
 | AWS CLI   | `<old>` | `<new>` |
 | CUDA      | `<old>` | `<new>` |
 | uv        | `<old>` | `<new>` |
