@@ -101,50 +101,52 @@ Do not assume a specific Ubuntu version, package set, or CUDA version. Always re
 
 10. Push the branch and open the pull request with the GitHub CLI.
 
-   - The `git commit`, `git push`, and `gh` steps need the local Git/GitHub credentials and network access. When the terminal is sandboxed these are hidden, so run these steps with the required access (outside the sandbox) rather than stopping. A sandboxed `gh auth status` may report "not logged in" even when the terminal is authenticated; do not treat that as a blocker.
-   - Set an explicit PR title: a [Conventional Commits](https://www.conventionalcommits.org/) `build:` summary that matches the commit (for example, `build: update pinned image dependencies`). Do not use `gh pr create --fill`, which derives the title from the branch name.
-   - Write the PR description to a temporary file and pass it with `--body-file` to avoid shell-escaping issues. In the PR description, wrap all SHA values (for example `sha256:...`) in backticks, including both old and new digest values in comparisons. Use Markdown, for example:
+The `git commit`, `git push`, and `gh` steps need the local Git/GitHub credentials and network access. When the terminal is sandboxed these are hidden, so run these steps with the required access (outside the sandbox) rather than stopping. A sandboxed `gh auth status` may report "not logged in" even when the terminal is authenticated; do not treat that as a blocker.
 
-     ```markdown
-     ## Summary
+Set an explicit PR title: a [Conventional Commits](https://www.conventionalcommits.org/) `build:` summary that matches the commit (for example, `build: update pinned image dependencies`). Do not use `gh pr create --fill`, which derives the title from the branch name.
 
-     Updates the `Dockerfile` build dependencies.
+Write the PR description to a temporary file and pass it with `--body-file` to avoid shell-escaping issues. In the PR description, wrap all SHA values (for example `sha256:...`) in backticks, including both old and new digest values in comparisons. Use Markdown, for example:
 
-     ### Base image
+```markdown
+## Summary
 
-     - `<image>:<tag>` digest: `sha256:<old-sha256>` -> `sha256:<new-sha256>` (image and tag unchanged)
+Updates the `Dockerfile` build dependencies.
 
-     ### APT packages
+### Base image
 
-     Include this section only when one or more APT package versions changed.
+- `<image>:<tag>` digest: `sha256:<old-sha256>` -> `sha256:<new-sha256>` (image and tag unchanged)
 
-     | Package | Before  | After   |
-     | ------- | ------- | ------- |
-     | curl    | `<old>` | `<new>` |
+### APT packages
 
-     If no APT package versions changed, omit the entire `### APT packages` section (including the table) and add a single line in `## Summary`: `APT package versions already up to date.`
+Include this section only when one or more APT package versions changed.
 
-     ### Other software
+| Package | Before  | After   |
+| ------- | ------- | ------- |
+| curl    | `<old>` | `<new>` |
 
-     Include rows for changed AWS CLI, CUDA, and uv versions, including CUDA package names if the package family changed.
+If no APT package versions changed, omit the entire `### APT packages` section (including the table) and add a single line in `## Summary`: `APT package versions already up to date.`
 
-     | Component | Before | After |
-     | --------- | ------ | ----- |
-     | AWS CLI   | `<old>` | `<new>` |
-     | CUDA      | `<old>` | `<new>` |
-     | uv        | `<old>` | `<new>` |
+### Other software
 
-     Note any packages that could not be upgraded and why.
-     ```
+Include rows for changed AWS CLI, CUDA, and uv versions, including CUDA package names if the package family changed.
 
-   - Create the pull request:
+| Component | Before | After |
+| --------- | ------ | ----- |
+| AWS CLI   | `<old>` | `<new>` |
+| CUDA      | `<old>` | `<new>` |
+| uv        | `<old>` | `<new>` |
 
-     ```bash
-     git push -u origin <branch>
-     gh pr create --base main --head <branch> --title "<title>" --body-file <body-file>
-     ```
+Note any packages that could not be upgraded and why.
+```
 
-   - Report the URL of the created pull request.
+Create the pull request:
+
+```bash
+git push -u origin <branch>
+gh pr create --base main --head <branch> --title "<title>" --body-file <body-file>
+```
+
+Report the URL of the created pull request.
 
 ## Guardrails
 
