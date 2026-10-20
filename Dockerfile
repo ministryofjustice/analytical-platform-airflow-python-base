@@ -19,14 +19,14 @@ ENV CONTAINER_USER="analyticalplatform" \
     ANALYTICAL_PLATFORM_DIRECTORY="/opt/analyticalplatform" \
     DEBIAN_FRONTEND="noninteractive" \
     PIP_BREAK_SYSTEM_PACKAGES="1" \
-    AWS_CLI_VERSION="2.37.4" \
-    CUDA_VERSION="13.2.0" \
+    AWS_CLI_VERSION="2.38.0" \
+    CUDA_VERSION="13.3.0" \
     NVIDIA_DISABLE_REQUIRE="true" \
-    NVIDIA_CUDA_COMPAT_VERSION="595.71.05-1ubuntu1" \
-    NVIDIA_CUDA_CUDART_VERSION="13.2.75-1" \
+    NVIDIA_CUDA_COMPAT_VERSION="610.57.04-1ubuntu1" \
+    NVIDIA_CUDA_CUDART_VERSION="13.3.29-1" \
     NVIDIA_VISIBLE_DEVICES="all" \
     NVIDIA_DRIVER_CAPABILITIES="compute,utility" \
-    UV_VERSION="0.12.19" \
+    UV_VERSION="0.13.1" \
     LD_LIBRARY_PATH="/usr/local/nvidia/lib:/usr/local/nvidia/lib64" \
     PATH="/usr/local/nvidia/bin:/usr/local/cuda/bin:/home/analyticalplatform/.local/bin:${PATH}"
 
@@ -127,8 +127,8 @@ echo "deb [signed-by=/etc/apt/keyrings/nvidia.gpg] https://developer.download.nv
 apt-get update --yes
 
 apt-get install --yes \
-  "cuda-cudart-13-2=${NVIDIA_CUDA_CUDART_VERSION}" \
-  "cuda-compat-13-2=${NVIDIA_CUDA_COMPAT_VERSION}"
+  "cuda-cudart-13-3=${NVIDIA_CUDA_CUDART_VERSION}" \
+  "cuda-compat-13-3=${NVIDIA_CUDA_COMPAT_VERSION}"
 
 echo "/usr/local/nvidia/lib" >> /etc/ld.so.conf.d/nvidia.conf
 echo "/usr/local/nvidia/lib64" >> /etc/ld.so.conf.d/nvidia.conf

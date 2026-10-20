@@ -38,4 +38,4 @@ Replace the old version string with the new one. Keep the surrounding double-quo
 
 - Always use `--platform linux/amd64` when running the Ubuntu image locally — the build target is `x86_64`.
 - Do not remove `apt-get clean --yes` and the `rm --force --recursive /var/lib/apt/lists/*` lines — they are required to keep the image layer small.
-- The base image is defined in the `FROM` line and managed separately by Dependabot — do not change it manually.
+- This instruction covers Ubuntu APT packages only. For `/maintenance`, follow `.github/prompts/maintenance.prompt.md` to also check the base image digest, AWS CLI, NVIDIA CUDA, and uv versions.
