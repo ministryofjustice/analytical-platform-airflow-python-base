@@ -42,17 +42,27 @@ commandTests:
   - name: "aws"
     command: "aws"
     args: ["--version"]
-    expectedOutput: ["aws-cli/2.37.4"]
+    expectedOutput: ["aws-cli/2.38.0"]
 
   - name: "uv"
     command: "uv"
     args: ["--version"]
-    expectedOutput: ["uv 0.12.19"]
+    expectedOutput: ["uv 0.13.1"]
 
   - name: "uvx"
     command: "uvx"
     args: ["--version"]
-    expectedOutput: ["uvx 0.12.19"]
+    expectedOutput: ["uvx 0.13.1"]
+
+  - name: "cuda runtime"
+    command: "dpkg"
+    args: ["--status", "cuda-cudart-13-3"]
+    expectedOutput: ["Version: 13.3.29-1"]
+
+  - name: "cuda compatibility"
+    command: "dpkg"
+    args: ["--status", "cuda-compat-13-3"]
+    expectedOutput: ["Version: 610.57.04-1ubuntu1"]
 
 fileExistenceTests:
   - name: "/opt/analyticalplatform"
