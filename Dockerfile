@@ -1,6 +1,6 @@
 #checkov:skip=CKV_DOCKER_2: HEALTHCHECK not required - Health checks are implemented downstream of this image
 
-FROM docker.io/library/ubuntu:24.04@sha256:f610ab94648195aa356059f5b41d6085c9d4d903c072430cdd1af7bdb646106b
+FROM docker.io/library/ubuntu:24.04@sha256:68ee22004a9109b44973313b02ff7b1de250f1de0f5ecb628d73f579aaff33ac
 
 LABEL org.opencontainers.image.vendor="Ministry of Justice" \
       org.opencontainers.image.authors="Analytical Platform (analytical-platform@digital.justice.gov.uk)" \
@@ -19,14 +19,14 @@ ENV CONTAINER_USER="analyticalplatform" \
     ANALYTICAL_PLATFORM_DIRECTORY="/opt/analyticalplatform" \
     DEBIAN_FRONTEND="noninteractive" \
     PIP_BREAK_SYSTEM_PACKAGES="1" \
-    AWS_CLI_VERSION="2.38.0" \
-    CUDA_VERSION="13.3.0" \
+    AWS_CLI_VERSION="2.38.4" \
+    CUDA_VERSION="13.4.0" \
     NVIDIA_DISABLE_REQUIRE="true" \
-    NVIDIA_CUDA_COMPAT_VERSION="610.57.04-1ubuntu1" \
-    NVIDIA_CUDA_CUDART_VERSION="13.3.29-1" \
+    NVIDIA_CUDA_COMPAT_VERSION="615.71.10-1ubuntu1" \
+    NVIDIA_CUDA_CUDART_VERSION="13.4.92-1" \
     NVIDIA_VISIBLE_DEVICES="all" \
     NVIDIA_DRIVER_CAPABILITIES="compute,utility" \
-    UV_VERSION="0.13.1" \
+    UV_VERSION="0.13.5" \
     LD_LIBRARY_PATH="/usr/local/nvidia/lib:/usr/local/nvidia/lib64" \
     PATH="/usr/local/nvidia/bin:/usr/local/cuda/bin:/home/analyticalplatform/.local/bin:${PATH}"
 
@@ -54,11 +54,11 @@ apt-get update --yes
 
 apt-get install --yes \
   "apt-transport-https=2.8.3" \
-  "ca-certificates=20260601~24.04.1" \
-  "curl=8.5.0-2ubuntu10.15" \
-  "libcurl3t64-gnutls=8.5.0-2ubuntu10.15" \
-  "libcurl4t64=8.5.0-2ubuntu10.15" \
-  "git=1:2.43.0-1ubuntu7.3" \
+  "ca-certificates=20260816ubuntu0.24.04.1" \
+  "curl=8.5.0-2ubuntu10.16" \
+  "libcurl3t64-gnutls=8.5.0-2ubuntu10.16" \
+  "libcurl4t64=8.5.0-2ubuntu10.16" \
+  "git=1:2.43.0-1ubuntu7.4" \
   "gzip=1.12-1ubuntu3.2" \
   "jq=1.7.1-3ubuntu0.24.04.2" \
   "libaom3=3.8.2-2ubuntu0.2" \
@@ -127,8 +127,8 @@ echo "deb [signed-by=/etc/apt/keyrings/nvidia.gpg] https://developer.download.nv
 apt-get update --yes
 
 apt-get install --yes \
-  "cuda-cudart-13-3=${NVIDIA_CUDA_CUDART_VERSION}" \
-  "cuda-compat-13-3=${NVIDIA_CUDA_COMPAT_VERSION}"
+  "cuda-cudart-13-4=${NVIDIA_CUDA_CUDART_VERSION}" \
+  "cuda-compat-13-4=${NVIDIA_CUDA_COMPAT_VERSION}"
 
 echo "/usr/local/nvidia/lib" >> /etc/ld.so.conf.d/nvidia.conf
 echo "/usr/local/nvidia/lib64" >> /etc/ld.so.conf.d/nvidia.conf
