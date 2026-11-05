@@ -73,6 +73,7 @@ apt-get install --yes \
   "libc6=2.39-0ubuntu8.9" \
   "libc6-dev=2.39-0ubuntu8.9" \
   "libssl3t64=3.0.13-0ubuntu3.16" \
+  "libpcre2-8-0=10.42-4ubuntu2.2" \
   "ncurses-base=6.4+20240113-1ubuntu2.2" \
   "ncurses-bin=6.4+20240113-1ubuntu2.2" \
   "openssl=3.0.13-0ubuntu3.16" \
