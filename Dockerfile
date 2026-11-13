@@ -1,6 +1,6 @@
 #checkov:skip=CKV_DOCKER_2: HEALTHCHECK not required - Health checks are implemented downstream of this image
 
-FROM docker.io/library/ubuntu:24.04@sha256:24737cef17f4e22b1977df7d9a05e77c4e28b7da5b8911f8d8ccda136bf3573c
+FROM docker.io/library/ubuntu:24.04@sha256:2198e4c65076e9cb0b3d695219df667c0e3b0072da64ca3c2648aca17dcecaf5
 
 LABEL org.opencontainers.image.vendor="Ministry of Justice" \
       org.opencontainers.image.authors="Analytical Platform (analytical-platform@digital.justice.gov.uk)" \
@@ -19,14 +19,14 @@ ENV CONTAINER_USER="analyticalplatform" \
     ANALYTICAL_PLATFORM_DIRECTORY="/opt/analyticalplatform" \
     DEBIAN_FRONTEND="noninteractive" \
     PIP_BREAK_SYSTEM_PACKAGES="1" \
-    AWS_CLI_VERSION="2.38.4" \
-    CUDA_VERSION="13.4.0" \
+    AWS_CLI_VERSION="2.40.1" \
+    CUDA_VERSION="13.5.0" \
     NVIDIA_DISABLE_REQUIRE="true" \
-    NVIDIA_CUDA_COMPAT_VERSION="615.71.10-1ubuntu1" \
-    NVIDIA_CUDA_CUDART_VERSION="13.4.92-1" \
+    NVIDIA_CUDA_COMPAT_VERSION="620.70.06-1ubuntu1" \
+    NVIDIA_CUDA_CUDART_VERSION="13.5.37-1" \
     NVIDIA_VISIBLE_DEVICES="all" \
     NVIDIA_DRIVER_CAPABILITIES="compute,utility" \
-    UV_VERSION="0.13.5" \
+    UV_VERSION="0.13.8" \
     LD_LIBRARY_PATH="/usr/local/nvidia/lib:/usr/local/nvidia/lib64" \
     PATH="/usr/local/nvidia/bin:/usr/local/cuda/bin:/home/analyticalplatform/.local/bin:${PATH}"
 
@@ -56,7 +56,7 @@ apt-get install --yes \
   "apt=2.8.4ubuntu0.1" \
   "apt-transport-https=2.8.4ubuntu0.1" \
   "libapt-pkg6.0t64=2.8.4ubuntu0.1" \
-  "ca-certificates=20260816ubuntu0.24.04.1" \
+  "ca-certificates=20260816ubuntu0.24.04.2" \
   "curl=8.5.0-2ubuntu10.16" \
   "libbrotli1=1.1.0-2ubuntu0.1" \
   "libcurl3t64-gnutls=8.5.0-2ubuntu10.16" \
@@ -68,21 +68,21 @@ apt-get install --yes \
   "libgnutls30t64=3.8.3-1.1ubuntu3.6" \
   "libncursesw6=6.4+20240113-1ubuntu2.2" \
   "libtinfo6=6.4+20240113-1ubuntu2.2" \
-  "libperl5.38t64=5.38.2-3.2ubuntu0.6" \
-  "libc-bin=2.39-0ubuntu8.9" \
-  "libc-dev-bin=2.39-0ubuntu8.9" \
-  "libc-devtools=2.39-0ubuntu8.9" \
-  "libc6=2.39-0ubuntu8.9" \
-  "libc6-dev=2.39-0ubuntu8.9" \
+  "libperl5.38t64=5.38.2-3.2ubuntu0.7" \
+  "libc-bin=2.39-0ubuntu8.12" \
+  "libc-dev-bin=2.39-0ubuntu8.12" \
+  "libc-devtools=2.39-0ubuntu8.12" \
+  "libc6=2.39-0ubuntu8.12" \
+  "libc6-dev=2.39-0ubuntu8.12" \
   "libssl3t64=3.0.13-0ubuntu3.16" \
   "libpcre2-8-0=10.42-4ubuntu2.2" \
   "ncurses-base=6.4+20240113-1ubuntu2.2" \
   "ncurses-bin=6.4+20240113-1ubuntu2.2" \
   "openssl=3.0.13-0ubuntu3.16" \
   "openssh-client=1:9.6p1-3ubuntu13.20" \
-  "perl=5.38.2-3.2ubuntu0.6" \
-  "perl-base=5.38.2-3.2ubuntu0.6" \
-  "perl-modules-5.38=5.38.2-3.2ubuntu0.6" \
+  "perl=5.38.2-3.2ubuntu0.7" \
+  "perl-base=5.38.2-3.2ubuntu0.7" \
+  "perl-modules-5.38=5.38.2-3.2ubuntu0.7" \
   "python3.12=3.12.3-1ubuntu0.17" \
   "python3-pip=24.0+dfsg-1ubuntu1.3" \
   "unzip=6.0-28ubuntu4.1"
@@ -131,8 +131,8 @@ echo "deb [signed-by=/etc/apt/keyrings/nvidia.gpg] https://developer.download.nv
 apt-get update --yes
 
 apt-get install --yes \
-  "cuda-cudart-13-4=${NVIDIA_CUDA_CUDART_VERSION}" \
-  "cuda-compat-13-4=${NVIDIA_CUDA_COMPAT_VERSION}"
+  "cuda-cudart-13-5=${NVIDIA_CUDA_CUDART_VERSION}" \
+  "cuda-compat-13-5=${NVIDIA_CUDA_COMPAT_VERSION}"
 
 echo "/usr/local/nvidia/lib" >> /etc/ld.so.conf.d/nvidia.conf
 echo "/usr/local/nvidia/lib64" >> /etc/ld.so.conf.d/nvidia.conf
