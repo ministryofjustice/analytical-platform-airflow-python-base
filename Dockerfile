@@ -69,11 +69,11 @@ apt-get install --yes \
   "libncursesw6=6.4+20240113-1ubuntu2.2" \
   "libtinfo6=6.4+20240113-1ubuntu2.2" \
   "libperl5.38t64=5.38.2-3.2ubuntu0.7" \
-  "libc-bin=2.39-0ubuntu8.9" \
-  "libc-dev-bin=2.39-0ubuntu8.9" \
-  "libc-devtools=2.39-0ubuntu8.9" \
-  "libc6=2.39-0ubuntu8.9" \
-  "libc6-dev=2.39-0ubuntu8.9" \
+  "libc-bin=2.39-0ubuntu8.12" \
+  "libc-dev-bin=2.39-0ubuntu8.12" \
+  "libc-devtools=2.39-0ubuntu8.12" \
+  "libc6=2.39-0ubuntu8.12" \
+  "libc6-dev=2.39-0ubuntu8.12" \
   "libssl3t64=3.0.13-0ubuntu3.16" \
   "libpcre2-8-0=10.42-4ubuntu2.2" \
   "ncurses-base=6.4+20240113-1ubuntu2.2" \
