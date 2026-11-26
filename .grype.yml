@@ -20,3 +20,4 @@ ignore:
   - vulnerability: CVE-2026-19445 # aws-cli
   - vulnerability: CVE-2026-19553 # aws-cli
   - vulnerability: CVE-2026-115557 # aws-cli
+  - vulnerability: CVE-2026-119170 # aws-cli bundled Python; cannot bump independently
